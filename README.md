@@ -1,24 +1,29 @@
-# README
+\$ docker-compose run web rails new . --force --database=postgresql
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+プロジェクトをビルド。--force オプションで Gemfile を上書き。--database=postgresql でデータベースを PostgreSQL に指定。
 
-Things you may want to cover:
+\$ docker-compose build
 
-* Ruby version
+新しい Gemfile をもう一度ビルド。
 
-* System dependencies
+\$ docker-compose up
 
-* Configuration
+docker-compose.yml で定義したサービスを開始・再起動する。
 
-* Database creation
+\$ docker-compose run web rake db:create
 
-* Database initialization
+アプリケーションは Docker デーモン上で動作させる。
 
-* How to run the test suite
+\$ docker images
 
-* Services (job queues, cache servers, search engines, etc.)
+docker のイメージの確認
 
-* Deployment instructions
+\$ docker stop
 
-* ...
+コンテナの停止
+
+\$ docker ps -a
+
+コンテナの確認
+
+-a をつけると停止しているコンテナも表示する
